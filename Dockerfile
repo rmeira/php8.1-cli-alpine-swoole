@@ -22,7 +22,7 @@ COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr
 # Install required PHP extensions and all their prerequisites available via apt.
 RUN chmod uga+x /usr/bin/install-php-extensions \
     && sync \
-    && install-php-extensions bcmath ds exif gd intl opcache pcntl pcov pdo_sqlsrv redis sqlsrv zip swoole mysqli pdo_mysql ext-ldap ldap
+    && install-php-extensions bcmath ds exif gd intl opcache pcntl pcov pdo_sqlsrv redis sqlsrv zip swoole mysqli pdo_mysql ldap
 
 # Downloading composer and marking it as executable.
 RUN curl -o /usr/local/bin/composer https://getcomposer.org/composer-stable.phar \
